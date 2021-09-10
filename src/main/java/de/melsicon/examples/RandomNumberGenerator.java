@@ -1,5 +1,6 @@
 package de.melsicon.examples;
 
+import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.event.StartupEvent;
 import io.micronaut.runtime.event.annotation.EventListener;
 import jakarta.inject.Singleton;
@@ -9,6 +10,7 @@ import java.util.Random;
 
 @Slf4j
 @Singleton
+@Requires(missingProperty="test")
 public class RandomNumberGenerator {
 
     @EventListener
