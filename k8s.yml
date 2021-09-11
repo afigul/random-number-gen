@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: "random-number-gen"
-          image: "gcr.io/random-number-gen/jib-image"
+          image: "docker.io/lehwwmcrnjnhzjaglr/random-number-gen"
           ports:
             - name: http
               containerPort: 8080

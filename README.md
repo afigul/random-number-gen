@@ -1,3 +1,29 @@
+# Random Number Generator
+
+This random Number Generator generates a random number and sends it to a kafka topic with key: <number of created messages> and value: <random number as string>
+
+## Setup on MacOS
+
+install homebrew: https://brew.sh/
+
+Install Java, Docker, IntelliJ, k9s, ...
+
+    brew install openjdk k9s gradle kubernetes-cli micronaut
+    brew install --cask intellij-idea-ce docker
+    
+Get a docker account and setup the "random-number-gen" repo
+
+Configure docker to run kubernetes (k8s) -> See Settings of Docker
+
+change build.gradle and k8s.yml to fit your docker credentials
+
+    ./gradlew clean build jib
+
+    kubectl create namespace dev
+
+    kubectl apply -f k8s.yml -n dev
+
+
 ## Micronaut 3.0.1 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.0.1/guide/index.html)
