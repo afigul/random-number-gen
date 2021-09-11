@@ -22,6 +22,12 @@ change build.gradle and k8s.yml to fit your docker credentials
     kubectl create namespace dev
 
     kubectl apply -f k8s.yml -n dev
+    
+See log form pod
+
+    kubectl get pods -n dev
+    
+    kubectl logs random-number-gen-<something-something> -n dev -f
 
 
 ## Micronaut 3.0.1 Documentation
